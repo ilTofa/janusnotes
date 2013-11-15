@@ -1,0 +1,16 @@
+/* 
+   MicrophoneStrings.strings
+   Coniglio
+
+   Created by Giacomo Tufano on 28/12/09.
+ 
+   Copyright 2011, Giacomo Tufano (gt@ilTofa.it)
+   Licensed under MIT license. See LICENSE file or http://www.opensource.org/licenses/mit-license.php
+ 
+ */
+
+"Click above to record" = "Tapez pour enregistrer";
+"Click above to stop recording" = "Tapez pour stopper l'enregistrement";
+"Click above to play" = "Tapez pour écouter";
+"Click above to stop playing" = "Tapez pour stopper l'écoute";
+"Save" = "Envoyer";

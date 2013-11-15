@@ -1,0 +1,39 @@
+Janus Notes is a note taking program for OSX that seriously respect your right to privacy.
+A companion app for iPhone and iPad allows you to have your notes always with you.
+It is named after the Latin God Janus, depicted as having two faces since he looks to the future and to the past. Or, may be, cloud storage and privacy. Or Macintoshes and iPhone/iPad. Or sharing and control. 
+To start simply add a note and begin writing. We're supporting only plain text on this version but we plan to improve on that in the next versions.
+You can add attachments to the notes and they will live side by side with your notes.
+You can seamlessy share the notes among different Macs and to your iDevices using Dropbox. Or not. It's your call.
+Your notes can be encrypted on your dropbox so to avoid the eavesdroppers.
+The encryption password is available in clear in the software and can be freely changed. It is saved in the System Keychain and, therefore, it is sure when the device is locked (as it should always be when not in use). The cloud storage (the real target of encryption) is always encrypted without any copy of the password. We feel this is the right balance between usability and security. This could be changed in the next versions.
+Please note that attachments are not encrypted in any case.
+We understand that note-taking is a very personal thing and we tried very hard to have your data as safe as possible.
+We have *no* access to your dropbox beside the specific folder that we use for storing notes. Your data is safe.
+The app is fully sandboxed and we have no access to anything else than the dropbox folder you choose and the attachments you added to the notes (a copy of them, stored with the notes).
+If you're privacy-conscious you should use FileVault on your Macintosh. Remember to lock your devices when you leave them.
+This app do not "phone home" nor access anything else. There is no analytics package nor ads for this reason. That means that we have no idea on how you use the app and what is happening. Please send your feedback and suggestions!
+
+Keywords
+note,notes,janus,privacy,encrypted,attachments,attach,iOS,sharing,sync,dropbox,syncronized
+
+URL
+http://www.iltofa.com/janus/
+
+Janus Notes is a Universal note taking for that seriously respect your right to privacy.
+It is named after the Latin God Janus, depicted as having two faces since he looks to the future and to the past. Or, may be, cloud storage and privacy. Or Macintoshes and iPhone/iPad. Or sharing and control. There is a companion app for desktop computers.
+To start simply add a note and begin writing. We're supporting only plain text on this version but we plan to improve on that in the next versions.
+You can add attachments to the notes and they will live side by side with your notes.
+You can share the notes among different Macs and to your iDevices using Dropbox. Or not. It's your call.
+Your notes can be encrypted on your dropbox so to avoid the eavesdroppers.
+The encryption password is available in clear in the software and can be freely changed. It is saved in the System Keychain and, therefore, it is sure when the device is locked (as it should always be when not in use). The cloud storage (the real target of encryption) is always encrypted without any copy of the password. We feel this is the right balance between usability and security. This could be changed in the next versions.
+Please note that attachments are not encrypted in any case.
+We understand that note-taking is a very personal thing and we tried very hard to have your data as safe as possible.
+We have *no* access to your dropbox beside the specific folder that we use for storing notes. Your data is safe.
+If you're privacy-conscious you should lock your iPhone with a code (this will encrypt the notes' cache on your iPhone). Remember to lock your devices when you leave them.
+This app do not "phone home" nor access anything else. There is no analytics package nor ads for this reason. That means that we have no idea on how you use the app and what is happening. Please send your feedback and suggestions!
+
+Keywords
+note,notes,janus,privacy,encrypted,attachments,attach,OS X,sharing,sync,dropbox,syncronized
+
+URL
+http://www.iltofa.com/janus/

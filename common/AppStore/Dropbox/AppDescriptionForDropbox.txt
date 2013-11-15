@@ -1,0 +1,4 @@
+Janus Notes is a note taking program for OSX and iOS that seriously respect your right to privacy.
+It is named after the Latin God Janus, depicted as having two faces since he looks to the future and to the past. Or, may be, cloud storage and privacy. Or Macintoshes and iPhone/iPad. Or sharing and control. 
+The application allows you to share the notes among different Macs and your iDevices using Dropbox. Or not. It's your call.
+The notes can be encrypted on your storage so to avoid any eavesdroppers.
