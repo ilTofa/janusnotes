@@ -11,10 +11,11 @@ The built program is available for free from the [Mac App Store](http://itunes.a
 There are two Xcode 5 projects, one for iOS and the other for OS X, respectively on the IPhone and Mac subdirectory. Forks and contributions are always welcome. 
 
 The code will generate the programs currently online on the stores, the only required thing not in the repository is the DropboxKeys.h header, containing the app key and the secred you'll need to access the Dropbox Sync API. The header file contains only 2 useful rows
+
 	#define DROPBOX_APP_KEY @"xxxxxxxxxxxxxxx"
 	#define DROPBOX_SECRET  @"xxxxxxxxxxxxxxx"
 
-The program uses many OSS libraries:
+The program uses:
 
 [iRate](https://github.com/nicklockwood/iRate) Copyright 2011 Charcoal Design
 
@@ -28,7 +29,7 @@ The program uses many OSS libraries:
 
 ####License
 
-The code is available under the (MIT license)[http://opensource.org/licenses/MIT].
+The code is available under the [MIT license](http://opensource.org/licenses/MIT).
 
 Copyright (c) 2013 Giacomo Tufano
 
