@@ -10,7 +10,11 @@ The built program is available for free from the [Mac App Store](http://itunes.a
 
 There are two Xcode 5 projects, one for iOS and the other for OS X, respectively on the IPhone and Mac subdirectory. Forks and contributions are always welcome. 
 
-The code will generate the programs currently online on the stores, the only required thing not in the repository is the DropboxKeys.h header, containing the app key and the secred you'll need to access the Dropbox Sync API. The header file contains only 2 useful rows
+The applications use CoreData for the local "caching" of notes and attachments and (optionally) syncs with Dropbox (using Dropbox Sync on iOS and the filesystem on OS X). The Dropbox files can be encrypted with an user-defined passphrase, the program uses RNCryptor for the actual encryption.
+
+The code at the corresponding tags will generate the programs currently online on the stores, the only required thing not in the repository is the DropboxKeys.h header, containing the app key and the secret you'll need to access the Dropbox Sync API. 
+
+The header file contains only 2 useful rows
 
 	#define DROPBOX_APP_KEY @"xxxxxxxxxxxxxxx"
 	#define DROPBOX_SECRET  @"xxxxxxxxxxxxxxx"
