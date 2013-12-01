@@ -29,8 +29,8 @@
 #import "GTThemer.h"
 #import <Dropbox/Dropbox.h>
 #import "IAMDataSyncController.h"
-#import "iRate.h"
 #import "STKeychain.h"
+#import "iRate.h"
 #import "GTTransientMessage.h"
 #import "AHAlertView.h"
 
@@ -43,8 +43,7 @@
 + (void)initialize {
     [iRate sharedInstance].daysUntilPrompt = 5;
     [iRate sharedInstance].usesUntilPrompt = 5;
-    [iRate sharedInstance].appStoreID = 651150600;
-    [iRate sharedInstance].appStoreGenreID = 0;
+    [iRate sharedInstance].promptAtLaunch = NO;
 }
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
@@ -110,7 +109,10 @@
         DLog(@"PIN (%@) is required!", pin);
         [self getPIN];
     } else {
-        DLog(@"PIN is not required");
+        DLog(@"PIN is not required, testing iRate");
+        if ([[iRate sharedInstance] shouldPromptForRating]) {
+            [[iRate sharedInstance] promptIfNetworkAvailable];
+        }
     }
 }
 
@@ -130,6 +132,15 @@
         NSString *pin = [STKeychain getPasswordForUsername:@"lockCode" andServiceName:@"it.iltofa.janus" error:&error];
         if(!pin || ![pin isEqualToString:[weakAlert textFieldAtIndex:0].text]) {
             [self getPIN];
+        } else {
+            DLog(@"Got PIN, now testing iRate.");
+            if ([[iRate sharedInstance] shouldPromptForRating]) {
+                double delayInSeconds = 2.0;
+                dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
+                dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+                    [[iRate sharedInstance] promptIfNetworkAvailable];
+                });
+            }
         }
     }];
     [alertView show];
@@ -172,7 +183,7 @@
     DLog(@"Here we are");
 }
 
-#pragma mark iAD
+#pragma mark - iAD
 
 - (void)setSkipAds:(BOOL)skipAds {
     [[NSUserDefaults standardUserDefaults] setBool:skipAds forKey:@"skipAds"];
@@ -182,7 +193,7 @@
     return [[NSUserDefaults standardUserDefaults] boolForKey:@"skipAds"];
 }
 
-#pragma mark SKPaymentTransactionObserver
+#pragma mark - SKPaymentTransactionObserver
 
 - (void)paymentQueue:(SKPaymentQueue *)queue updatedTransactions:(NSArray *)transactions {
     for (SKPaymentTransaction *transaction in transactions)
