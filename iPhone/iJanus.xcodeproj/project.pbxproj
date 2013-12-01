@@ -34,20 +34,21 @@
 		6476C11017E0CE270094C4AB /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64CB194A17392BAD0014F35F /* iAd.framework */; };
 		647DEAF417E701D900D3EE57 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64CB194617392B7C0014F35F /* MessageUI.framework */; };
 		648A2773171D875000338218 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 648A2772171D875000338218 /* MBProgressHUD.m */; };
+		648C38D5184BF262007580EA /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 648C38D4184BF262007580EA /* MainStoryboard.storyboard */; };
+		648C38D7184BF279007580EA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 648C38D6184BF279007580EA /* InfoPlist.strings */; };
+		648C38D9184BF38F007580EA /* iRate.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 648C38D8184BF38F007580EA /* iRate.bundle */; };
+		648C38DB184BF448007580EA /* MicrophoneStrings.strings in Resources */ = {isa = PBXBuildFile; fileRef = 648C38DA184BF448007580EA /* MicrophoneStrings.strings */; };
 		649DCEA016D28DB8003F5A83 /* IAmMine.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 649DCE9E16D28DB7003F5A83 /* IAmMine.xcdatamodeld */; };
 		649DCEA316D29B0A003F5A83 /* CoreDataController.m in Sources */ = {isa = PBXBuildFile; fileRef = 649DCEA216D29AAD003F5A83 /* CoreDataController.m */; };
 		64A0507016D28CCA0025E179 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64A0506F16D28CCA0025E179 /* UIKit.framework */; };
 		64A0507216D28CCA0025E179 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64A0507116D28CCA0025E179 /* Foundation.framework */; };
 		64A0507416D28CCA0025E179 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64A0507316D28CCA0025E179 /* CoreGraphics.framework */; };
-		64A0507A16D28CCA0025E179 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 64A0507816D28CCA0025E179 /* InfoPlist.strings */; };
 		64A0507C16D28CCA0025E179 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 64A0507B16D28CCA0025E179 /* main.m */; };
 		64A0508016D28CCA0025E179 /* IAMAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 64A0507F16D28CCA0025E179 /* IAMAppDelegate.m */; };
-		64A0508916D28CCA0025E179 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 64A0508716D28CCA0025E179 /* MainStoryboard.storyboard */; };
 		64A75566170212A40085933D /* link-microphone.png in Resources */ = {isa = PBXBuildFile; fileRef = 64A75564170212A40085933D /* link-microphone.png */; };
 		64A75567170212A40085933D /* link-microphone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 64A75565170212A40085933D /* link-microphone@2x.png */; };
 		64A7557D1702137A0085933D /* BigMic.png in Resources */ = {isa = PBXBuildFile; fileRef = 64A755691702137A0085933D /* BigMic.png */; };
 		64A7557E1702137A0085933D /* BigMic@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 64A7556A1702137A0085933D /* BigMic@2x.png */; };
-		64A7557F1702137A0085933D /* MicrophoneStrings.strings in Resources */ = {isa = PBXBuildFile; fileRef = 64A7556B1702137A0085933D /* MicrophoneStrings.strings */; };
 		64A755801702137A0085933D /* FloatingWindow.textClipping in Resources */ = {isa = PBXBuildFile; fileRef = 64A7556D1702137A0085933D /* FloatingWindow.textClipping */; };
 		64A755811702137A0085933D /* MicrophoneBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 64A755701702137A0085933D /* MicrophoneBackground.png */; };
 		64A755821702137A0085933D /* MicrophoneWindow-iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 64A755711702137A0085933D /* MicrophoneWindow-iPad.xib */; };
@@ -83,7 +84,6 @@
 		64CEF2BE17D1F70900D3A58B /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 64CEF2BD17D1F70900D3A58B /* libc++.dylib */; };
 		64DE6C261727E5320031183A /* NSManagedObjectContext+FetchedObjectFromURI.m in Sources */ = {isa = PBXBuildFile; fileRef = 64DE6C251727E5320031183A /* NSManagedObjectContext+FetchedObjectFromURI.m */; };
 		64E0AA4317E70ED9008BF0E3 /* In-App-Products.plist in Resources */ = {isa = PBXBuildFile; fileRef = 64E0AA4217E70ED9008BF0E3 /* In-App-Products.plist */; };
-		64E0AA4517E9066E008BF0E3 /* iRate.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 64E0AA4417E9066E008BF0E3 /* iRate.bundle */; };
 		64E0AA4817E9067D008BF0E3 /* iRate.m in Sources */ = {isa = PBXBuildFile; fileRef = 64E0AA4717E9067D008BF0E3 /* iRate.m */; };
 		64EB0F061819144E00DD9924 /* autolink.c in Sources */ = {isa = PBXBuildFile; fileRef = 64EB0EF71819144E00DD9924 /* autolink.c */; };
 		64EB0F071819144E00DD9924 /* buffer.c in Sources */ = {isa = PBXBuildFile; fileRef = 64EB0EF91819144E00DD9924 /* buffer.c */; };
@@ -142,6 +142,10 @@
 		6460CD64181E7C0F002DF1EE /* AHAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AHAlertView.m; sourceTree = "<group>"; };
 		648A2771171D875000338218 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
 		648A2772171D875000338218 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
+		648C38D4184BF262007580EA /* MainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard.storyboard; sourceTree = "<group>"; };
+		648C38D6184BF279007580EA /* InfoPlist.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = InfoPlist.strings; sourceTree = "<group>"; };
+		648C38D8184BF38F007580EA /* iRate.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = iRate.bundle; sourceTree = "<group>"; };
+		648C38DA184BF448007580EA /* MicrophoneStrings.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = MicrophoneStrings.strings; sourceTree = "<group>"; };
 		649DCE9F16D28DB7003F5A83 /* IAmMine.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = IAmMine.xcdatamodel; sourceTree = "<group>"; };
 		649DCEA116D29AAD003F5A83 /* CoreDataController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CoreDataController.h; path = ../common/iCloud/CoreDataController.h; sourceTree = "<group>"; };
 		649DCEA216D29AAD003F5A83 /* CoreDataController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = CoreDataController.m; path = ../common/iCloud/CoreDataController.m; sourceTree = "<group>"; };
@@ -150,21 +154,16 @@
 		64A0507116D28CCA0025E179 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		64A0507316D28CCA0025E179 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		64A0507716D28CCA0025E179 /* iJanus-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "iJanus-Info.plist"; sourceTree = "<group>"; };
-		64A0507916D28CCA0025E179 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		64A0507B16D28CCA0025E179 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		64A0507D16D28CCA0025E179 /* iJanus-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "iJanus-Prefix.pch"; sourceTree = "<group>"; };
 		64A0507E16D28CCA0025E179 /* IAMAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IAMAppDelegate.h; sourceTree = "<group>"; };
 		64A0507F16D28CCA0025E179 /* IAMAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IAMAppDelegate.m; sourceTree = "<group>"; };
-		64A0508816D28CCA0025E179 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		64A0508A16D28CCA0025E179 /* IAMViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IAMViewController.h; sourceTree = "<group>"; };
 		64A75564170212A40085933D /* link-microphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "link-microphone.png"; path = "Images/link-microphone.png"; sourceTree = "<group>"; };
 		64A75565170212A40085933D /* link-microphone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "link-microphone@2x.png"; path = "Images/link-microphone@2x.png"; sourceTree = "<group>"; };
 		64A755691702137A0085933D /* BigMic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BigMic.png; sourceTree = "<group>"; };
 		64A7556A1702137A0085933D /* BigMic@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "BigMic@2x.png"; sourceTree = "<group>"; };
-		64A7556C1702137A0085933D /* English */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/MicrophoneStrings.strings; sourceTree = "<group>"; };
 		64A7556D1702137A0085933D /* FloatingWindow.textClipping */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = FloatingWindow.textClipping; sourceTree = "<group>"; };
-		64A7556E1702137A0085933D /* French */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = French; path = French.lproj/MicrophoneStrings.strings; sourceTree = "<group>"; };
-		64A7556F1702137A0085933D /* Italian */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Italian; path = Italian.lproj/MicrophoneStrings.strings; sourceTree = "<group>"; };
 		64A755701702137A0085933D /* MicrophoneBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MicrophoneBackground.png; sourceTree = "<group>"; };
 		64A755711702137A0085933D /* MicrophoneWindow-iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "MicrophoneWindow-iPad.xib"; sourceTree = "<group>"; };
 		64A755721702137A0085933D /* MicrophoneWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MicrophoneWindow.h; sourceTree = "<group>"; };
@@ -211,7 +210,6 @@
 		64DE6C241727E5320031183A /* NSManagedObjectContext+FetchedObjectFromURI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSManagedObjectContext+FetchedObjectFromURI.h"; path = "../common/iCloud/NSManagedObjectContext+FetchedObjectFromURI.h"; sourceTree = "<group>"; };
 		64DE6C251727E5320031183A /* NSManagedObjectContext+FetchedObjectFromURI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSManagedObjectContext+FetchedObjectFromURI.m"; path = "../common/iCloud/NSManagedObjectContext+FetchedObjectFromURI.m"; sourceTree = "<group>"; };
 		64E0AA4217E70ED9008BF0E3 /* In-App-Products.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "In-App-Products.plist"; sourceTree = "<group>"; };
-		64E0AA4417E9066E008BF0E3 /* iRate.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = iRate.bundle; sourceTree = "<group>"; };
 		64E0AA4617E9067D008BF0E3 /* iRate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iRate.h; sourceTree = "<group>"; };
 		64E0AA4717E9067D008BF0E3 /* iRate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iRate.m; sourceTree = "<group>"; };
 		64EB0EF71819144E00DD9924 /* autolink.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = autolink.c; sourceTree = "<group>"; };
@@ -338,7 +336,7 @@
 			children = (
 				64E0AA4617E9067D008BF0E3 /* iRate.h */,
 				64E0AA4717E9067D008BF0E3 /* iRate.m */,
-				64E0AA4417E9066E008BF0E3 /* iRate.bundle */,
+				648C38D8184BF38F007580EA /* iRate.bundle */,
 			);
 			name = iRate;
 			path = ../common/iRate;
@@ -475,8 +473,8 @@
 				64A0507F16D28CCA0025E179 /* IAMAppDelegate.m */,
 				64217CFB1831609E00FC5C2E /* DropboxKeys.h */,
 				64101E2816F087CF0086AD5F /* Themes */,
-				64A0508716D28CCA0025E179 /* MainStoryboard.storyboard */,
 				641A5EFB16ED463B00D3440C /* MainStoryboard_iPad.storyboard */,
+				648C38D4184BF262007580EA /* MainStoryboard.storyboard */,
 				641D954116E8CD8200A253E3 /* Note Edit */,
 				64027D7916DD7CB800DEA647 /* IAMPreferencesController.h */,
 				64027D7A16DD7CB800DEA647 /* IAMPreferencesController.m */,
@@ -488,11 +486,11 @@
 		64A0507616D28CCA0025E179 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				648C38D6184BF279007580EA /* InfoPlist.strings */,
 				64EB0F0E1819147100DD9924 /* MarkdownPreview.html */,
 				64B56852174658B3006D04C4 /* readme.txt */,
 				645A13A01701BFC800CCB4FB /* iJanus.entitlements */,
 				64A0507716D28CCA0025E179 /* iJanus-Info.plist */,
-				64A0507816D28CCA0025E179 /* InfoPlist.strings */,
 				64A0507B16D28CCA0025E179 /* main.m */,
 				64A0507D16D28CCA0025E179 /* iJanus-Prefix.pch */,
 				64E0AA4217E70ED9008BF0E3 /* In-App-Products.plist */,
@@ -505,12 +503,12 @@
 			children = (
 				64A755691702137A0085933D /* BigMic.png */,
 				64A7556A1702137A0085933D /* BigMic@2x.png */,
-				64A7556B1702137A0085933D /* MicrophoneStrings.strings */,
 				64A7556D1702137A0085933D /* FloatingWindow.textClipping */,
 				64A755701702137A0085933D /* MicrophoneBackground.png */,
 				64A755711702137A0085933D /* MicrophoneWindow-iPad.xib */,
 				64A755721702137A0085933D /* MicrophoneWindow.h */,
 				64A755731702137A0085933D /* MicrophoneWindow.m */,
+				648C38DA184BF448007580EA /* MicrophoneStrings.strings */,
 				64A755741702137A0085933D /* MicrophoneWindow.xib */,
 				64A755751702137A0085933D /* one.png */,
 				64A755761702137A0085933D /* one@2x.png */,
@@ -640,13 +638,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				64A0507A16D28CCA0025E179 /* InfoPlist.strings in Resources */,
-				64A0508916D28CCA0025E179 /* MainStoryboard.storyboard in Resources */,
 				6447056E16DD0FC4000A0262 /* SmallRow.png in Resources */,
 				6447056F16DD0FC4000A0262 /* SmallRow@2x.png in Resources */,
 				645A7E6918183846003C9D5A /* link-browser@2x.png in Resources */,
 				64A8A7DC16E738A30013AFFF /* link-icon.png in Resources */,
 				64A8A7DD16E738A30013AFFF /* link-icon@2x.png in Resources */,
+				648C38DB184BF448007580EA /* MicrophoneStrings.strings in Resources */,
 				64A8A7E916E7B6010013AFFF /* link-icon-big.png in Resources */,
 				64A8A7EA16E7B6010013AFFF /* link-icon-big@2x.png in Resources */,
 				64A8A7ED16E7BCF90013AFFF /* link-unknown-big.png in Resources */,
@@ -658,11 +655,11 @@
 				645A7E6818183846003C9D5A /* link-browser.png in Resources */,
 				64A7557E1702137A0085933D /* BigMic@2x.png in Resources */,
 				645A7E6718183846003C9D5A /* link-browser-big@2x.png in Resources */,
-				64A7557F1702137A0085933D /* MicrophoneStrings.strings in Resources */,
+				648C38D7184BF279007580EA /* InfoPlist.strings in Resources */,
 				64A755801702137A0085933D /* FloatingWindow.textClipping in Resources */,
 				64CEF2BC17D0E65900D3A58B /* Images.xcassets in Resources */,
 				64A755811702137A0085933D /* MicrophoneBackground.png in Resources */,
-				64E0AA4517E9066E008BF0E3 /* iRate.bundle in Resources */,
+				648C38D5184BF262007580EA /* MainStoryboard.storyboard in Resources */,
 				64A755821702137A0085933D /* MicrophoneWindow-iPad.xib in Resources */,
 				64A755841702137A0085933D /* MicrophoneWindow.xib in Resources */,
 				64A755851702137A0085933D /* one.png in Resources */,
@@ -673,6 +670,7 @@
 				64A755891702137A0085933D /* three.png in Resources */,
 				64A7558A1702137A0085933D /* three@2x.png in Resources */,
 				64A7558B1702137A0085933D /* two.png in Resources */,
+				648C38D9184BF38F007580EA /* iRate.bundle in Resources */,
 				64A7558C1702137A0085933D /* two@2x.png in Resources */,
 				64B56853174658B3006D04C4 /* readme.txt in Resources */,
 				64E0AA4317E70ED9008BF0E3 /* In-App-Products.plist in Resources */,
@@ -733,35 +731,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		64A0507816D28CCA0025E179 /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				64A0507916D28CCA0025E179 /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		64A0508716D28CCA0025E179 /* MainStoryboard.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				64A0508816D28CCA0025E179 /* en */,
-			);
-			name = MainStoryboard.storyboard;
-			sourceTree = "<group>";
-		};
-		64A7556B1702137A0085933D /* MicrophoneStrings.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				64A7556C1702137A0085933D /* English */,
-				64A7556E1702137A0085933D /* French */,
-				64A7556F1702137A0085933D /* Italian */,
-			);
-			name = MicrophoneStrings.strings;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		64A0508D16D28CCA0025E179 /* Debug */ = {
