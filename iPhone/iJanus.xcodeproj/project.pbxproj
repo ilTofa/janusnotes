@@ -423,7 +423,7 @@
 			children = (
 				64845FE316E019F20046BE9C /* Utilities (common) */,
 				649DCE9A16D28D30003F5A83 /* CoreData (common) */,
-				64A0507516D28CCA0025E179 /* I Am Mine */,
+				64A0507516D28CCA0025E179 /* iJanus */,
 				64A0506E16D28CCA0025E179 /* Frameworks */,
 				64A0506D16D28CCA0025E179 /* Products */,
 			);
@@ -462,7 +462,7 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		64A0507516D28CCA0025E179 /* I Am Mine */ = {
+		64A0507516D28CCA0025E179 /* iJanus */ = {
 			isa = PBXGroup;
 			children = (
 				64CEF2BB17D0E65900D3A58B /* Images.xcassets */,
@@ -482,7 +482,7 @@
 				64027D7A16DD7CB800DEA647 /* IAMPreferencesController.m */,
 				64A0507616D28CCA0025E179 /* Supporting Files */,
 			);
-			path = "I Am Mine";
+			path = iJanus;
 			sourceTree = "<group>";
 		};
 		64A0507616D28CCA0025E179 /* Supporting Files */ = {
@@ -833,8 +833,8 @@
 					"\"$(SRCROOT)\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "I Am Mine/iJanus-Prefix.pch";
-				INFOPLIST_FILE = "I Am Mine/iJanus-Info.plist";
+				GCC_PREFIX_HEADER = "iJanus/iJanus-Prefix.pch";
+				INFOPLIST_FILE = "iJanus/iJanus-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_NAME = iJanus;
@@ -857,8 +857,8 @@
 					"\"$(SRCROOT)\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "I Am Mine/iJanus-Prefix.pch";
-				INFOPLIST_FILE = "I Am Mine/iJanus-Info.plist";
+				GCC_PREFIX_HEADER = "iJanus/iJanus-Prefix.pch";
+				INFOPLIST_FILE = "iJanus/iJanus-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_NAME = iJanus;
