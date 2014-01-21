@@ -324,6 +324,15 @@
     [[self keyNoteEditor] deleteAttachment:sender];
 }
 
+- (IBAction)backupNotesArchive:(id)sender {
+    DLog(@"called.");
+}
+
+- (IBAction)restoreNotesArchive:(id)sender {
+    DLog(@"called.");
+}
+
+
 #if DEMO
 
 #pragma mark - Demo Management

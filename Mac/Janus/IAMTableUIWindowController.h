@@ -53,6 +53,10 @@
 - (IBAction)addAttachmentToNoteAction:(id)sender;
 - (IBAction)removeAttachmentFromNoteAction:(id)sender;
 
+// Called directly from main menu
+- (IBAction)backupNotesArchive:(id)sender;
+- (IBAction)restoreNotesArchive:(id)sender;
+
 // called from openFile in apdelegate
 - (void)openNoteAtURI:(NSURL *)uri;
 
