@@ -32,9 +32,6 @@
 #import "IAMFilesystemSyncController.h"
 #import "NSManagedObjectContext+FetchedObjectFromURI.h"
 #import "Attachment.h"
-#if DEMO
-#import "IAMCountdownWindowController.h"
-#endif
 
 @interface IAMTableUIWindowController () <IAMNoteEditorWCDelegate, NSWindowDelegate>
 
@@ -42,10 +39,6 @@
 @property (copy) NSArray *sortDescriptors;
 
 @property NSTimer *syncStatusTimer;
-
-#if DEMO
-@property IAMCountdownWindowController *countdownController;
-#endif
 
 @end
 
@@ -111,9 +104,6 @@
 //    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(defaultDirectorySelected:) name:kIAMDataSyncSelectedDefaulDir object:nil];
     [IAMFilesystemSyncController sharedInstance];
     [self.arrayController setSortDescriptors:@[[[NSSortDescriptor alloc] initWithKey:@"timeStamp" ascending:NO]]];
-#if DEMO
-    [self showRemainingDaysBox];
-#endif
 }
 
 - (void)defaultDirectorySelected:(NSNotification *)notification {
@@ -125,11 +115,6 @@
 }
 
 - (IBAction)refresh:(id)sender {
-#if DEMO
-    if(((IAMAppDelegate *)[NSApplication sharedApplication].delegate).lifeline < 1 || ((IAMAppDelegate *)[NSApplication sharedApplication].delegate).isTampered) {
-        [self showRemainingDaysBox];
-    }
-#endif
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(endSyncNotificationHandler:) name:kIAMDataSyncRefreshTerminated object:nil];
     [[IAMFilesystemSyncController sharedInstance] refreshContentFromRemote];
 }
@@ -166,11 +151,6 @@
 }
 
 - (IBAction)addNote:(id)sender {
-#if DEMO
-    if(((IAMAppDelegate *)[NSApplication sharedApplication].delegate).lifeline < 1 || ((IAMAppDelegate *)[NSApplication sharedApplication].delegate).isTampered) {
-        [self showRemainingDaysBox];
-    }
-#endif
     DLog(@"This is addNote handler in MainWindowController");
     IAMNoteEditorWC *noteEditor = [[IAMNoteEditorWC alloc] initWithWindowNibName:@"IAMNoteEditorWC"];
     [noteEditor setDelegate:self];
@@ -199,11 +179,6 @@
 }
 
 - (IBAction)deleteNote:(id)sender {
-#if DEMO
-    if(((IAMAppDelegate *)[NSApplication sharedApplication].delegate).lifeline < 1 || ((IAMAppDelegate *)[NSApplication sharedApplication].delegate).isTampered) {
-        [self showRemainingDaysBox];
-    }
-#endif
 //    DLog(@"Selected note for deleting is: %@", [self.arrayController selectedObjects][0]);
     NSAlert *alert = [[NSAlert alloc] init];
     [alert setInformativeText:NSLocalizedString(@"Are you sure you want to delete the note?", nil)];
@@ -214,11 +189,6 @@
 }
 
 - (IBAction)actionPreferences:(id)sender {
-#if DEMO
-    if(((IAMAppDelegate *)[NSApplication sharedApplication].delegate).lifeline < 1 || ((IAMAppDelegate *)[NSApplication sharedApplication].delegate).isTampered) {
-        [self showRemainingDaysBox];
-    }
-#endif
     [(IAMAppDelegate *)[[NSApplication sharedApplication] delegate] preferencesAction:sender];
 }
 
@@ -311,24 +281,5 @@
 - (IBAction)restoreNotesArchive:(id)sender {
     DLog(@"called.");
 }
-
-
-#if DEMO
-
-#pragma mark - Demo Management
-
-- (void)showRemainingDaysBox {
-    if(!self.countdownController) {
-        self.countdownController = [[IAMCountdownWindowController alloc] initWithWindowNibName:@"IAMCountdownWindowController"];
-    }
-    [[NSApplication sharedApplication] beginSheet:self.countdownController.window modalForWindow:self.window modalDelegate:self didEndSelector:@selector(didEndSheet:returnCode:contextInfo:) contextInfo:nil];
-}
-
-- (void)didEndSheet:(NSWindow *)sheet returnCode:(NSInteger)returnCode contextInfo:(void *)contextInfo {
-    [self.countdownController.window orderOut:self];
-    self.countdownController = nil;
-}
-
-#endif
 
 @end

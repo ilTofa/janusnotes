@@ -40,12 +40,6 @@
                                     <action selector="getIOSApp:" target="494" id="836"/>
                                 </connections>
                             </menuItem>
-                            <menuItem title="Buy Full Version on MAS..." id="837">
-                                <modifierMask key="keyEquivalentModifierMask"/>
-                                <connections>
-                                    <action selector="getFullVersion:" target="494" id="841"/>
-                                </connections>
-                            </menuItem>
                             <menuItem isSeparatorItem="YES" id="835"/>
                             <menuItem title="Services" id="131">
                                 <menu key="submenu" title="Services" systemMenu="services" id="130"/>
@@ -433,11 +427,7 @@ CA
                 </menuItem>
             </items>
         </menu>
-        <customObject id="494" customClass="IAMAppDelegate">
-            <connections>
-                <outlet property="buyFullVersionMenu" destination="837" id="840"/>
-            </connections>
-        </customObject>
+        <customObject id="494" customClass="IAMAppDelegate"/>
         <customObject id="420" customClass="NSFontManager"/>
         <userDefaultsController representsSharedInstance="YES" id="685"/>
     </objects>

@@ -39,12 +39,6 @@
 
 @property (strong, nonatomic) IAMTableUIWindowController *collectionController;
 
-#if DEMO
-@property (readonly, nonatomic) NSInteger lifeline;
-@property (nonatomic, getter = isTampered) BOOL tampered;
-#endif
-@property (weak) IBOutlet NSMenuItem *buyFullVersionMenu;
-
 // CoreData helper
 @property (nonatomic, strong, readonly) CoreDataController *coreDataController;
 
@@ -54,6 +48,5 @@
 - (IBAction)notesWindowAction:(id)sender;
 
 - (IBAction)getIOSApp:(id)sender;
-- (IBAction)getFullVersion:(id)sender;
 
 @end
