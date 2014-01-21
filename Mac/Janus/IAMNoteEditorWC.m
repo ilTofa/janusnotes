@@ -135,6 +135,10 @@
     [self.window performClose:sender];
 }
 
+- (IBAction)closeWithoutSave:(id)sender {
+    [self.window performClose:sender];
+}
+
 -(void)dealloc {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }

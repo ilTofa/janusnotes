@@ -46,13 +46,6 @@
 - (IBAction)refresh:(id)sender;
 - (IBAction)showInFinder:(id)sender;
 
-// Note editor actions from main menu
-- (IBAction)saveNoteAndContinueAction:(id)sender;
-- (IBAction)saveNoteAndCloseAction:(id)sender;
-- (IBAction)closeNote:(id)sender;
-- (IBAction)addAttachmentToNoteAction:(id)sender;
-- (IBAction)removeAttachmentFromNoteAction:(id)sender;
-
 // Called directly from main menu
 - (IBAction)backupNotesArchive:(id)sender;
 - (IBAction)restoreNotesArchive:(id)sender;

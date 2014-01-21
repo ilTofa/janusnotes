@@ -85,18 +85,18 @@
                         <items>
                             <menuItem title="New Note" keyEquivalent="n" id="82">
                                 <connections>
-                                    <action selector="newNoteAction:" target="494" id="792"/>
+                                    <action selector="addNote:" target="-1" id="Ecs-iC-Rl3"/>
                                 </connections>
                             </menuItem>
                             <menuItem title="Edit Note" keyEquivalent="o" id="72">
                                 <connections>
-                                    <action selector="editNoteAction:" target="494" id="794"/>
+                                    <action selector="editNote:" target="-1" id="8ok-gA-Cv7"/>
                                 </connections>
                             </menuItem>
                             <menuItem title="Show in Finder" id="832">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <connections>
-                                    <action selector="showInFinderAction:" target="494" id="833"/>
+                                    <action selector="showInFinder:" target="-1" id="was-sG-q8d"/>
                                 </connections>
                             </menuItem>
                             <menuItem isSeparatorItem="YES" id="79">
@@ -107,7 +107,7 @@
 CA
 </string>
                                 <connections>
-                                    <action selector="deleteNoteAction:" target="494" id="796"/>
+                                    <action selector="deleteNote:" target="-1" id="uMa-rG-dMV"/>
                                 </connections>
                             </menuItem>
                             <menuItem isSeparatorItem="YES" id="790">
@@ -128,7 +128,7 @@ CA
                             <menuItem isSeparatorItem="YES" id="hGR-O2-JuI"/>
                             <menuItem title="Refresh Notes List" keyEquivalent="r" id="791">
                                 <connections>
-                                    <action selector="refreshNotesAction:" target="494" id="797"/>
+                                    <action selector="refresh:" target="-1" id="nsb-XK-WK1"/>
                                 </connections>
                             </menuItem>
                         </items>
@@ -341,29 +341,29 @@ CA
                         <items>
                             <menuItem title="Save and Continue" keyEquivalent="s" id="801">
                                 <connections>
-                                    <action selector="saveNoteAndContinueAction:" target="494" id="808"/>
+                                    <action selector="saveAndContinue:" target="-1" id="E82-z5-3CQ"/>
                                 </connections>
                             </menuItem>
                             <menuItem title="Save and Close" keyEquivalent="S" id="802">
                                 <connections>
-                                    <action selector="saveNoteAndCloseAction:" target="494" id="809"/>
+                                    <action selector="saveAndClose:" target="-1" id="4gl-X1-5to"/>
                                 </connections>
                             </menuItem>
                             <menuItem title="Close Without Save" id="803">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <connections>
-                                    <action selector="closeNote:" target="494" id="810"/>
+                                    <action selector="closeWithoutSave:" target="-1" id="NgL-LL-Ws2"/>
                                 </connections>
                             </menuItem>
                             <menuItem isSeparatorItem="YES" id="804"/>
                             <menuItem title="Add Attachment" keyEquivalent="+" id="806">
                                 <connections>
-                                    <action selector="addAttachmentToNoteAction:" target="494" id="812"/>
+                                    <action selector="addAttachment:" target="-1" id="kRi-Cd-2Zy"/>
                                 </connections>
                             </menuItem>
                             <menuItem title="Remove Attachment" keyEquivalent="-" id="807">
                                 <connections>
-                                    <action selector="removeAttachmentFromNoteAction:" target="494" id="813"/>
+                                    <action selector="deleteAttachment:" target="-1" id="V1g-hl-I7V"/>
                                 </connections>
                             </menuItem>
                         </items>

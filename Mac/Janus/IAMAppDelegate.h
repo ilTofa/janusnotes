@@ -52,18 +52,6 @@
 - (IBAction)preferencesAction:(id)sender;
 - (void)preferencesForDirectory;
 - (IBAction)notesWindowAction:(id)sender;
-- (IBAction)newNoteAction:(id)sender;
-- (IBAction)editNoteAction:(id)sender;
-- (IBAction)closeNoteAction:(id)sender;
-- (IBAction)deleteNoteAction:(id)sender;
-- (IBAction)refreshNotesAction:(id)sender;
-- (IBAction)showInFinderAction:(id)sender;
-
-- (IBAction)saveNoteAndContinueAction:(id)sender;
-- (IBAction)saveNoteAndCloseAction:(id)sender;
-- (IBAction)closeNote:(id)sender;
-- (IBAction)addAttachmentToNoteAction:(id)sender;
-- (IBAction)removeAttachmentFromNoteAction:(id)sender;
 
 - (IBAction)getIOSApp:(id)sender;
 - (IBAction)getFullVersion:(id)sender;
