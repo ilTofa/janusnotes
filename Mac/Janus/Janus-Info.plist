@@ -22,6 +22,22 @@
 				<string>it.iltofa.janus</string>
 			</array>
 		</dict>
+		<dict>
+			<key>CFBundleTypeExtensions</key>
+			<array>
+				<string>janusarchive</string>
+			</array>
+			<key>CFBundleTypeIconFile</key>
+			<string>it.iltofa.janus.archiveicon</string>
+			<key>CFBundleTypeName</key>
+			<string>Janus Notes Archive</string>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>LSItemContentTypes</key>
+			<array>
+				<string>it.iltofa.janusarchive</string>
+			</array>
+		</dict>
 	</array>
 	<key>CFBundleExecutable</key>
 	<string>${EXECUTABLE_NAME}</string>
@@ -74,6 +90,28 @@
 				<key>public.filename-extension</key>
 				<array>
 					<string>janus</string>
+				</array>
+			</dict>
+		</dict>
+		<dict>
+			<key>UTTypeConformsTo</key>
+			<array>
+				<string>public.data</string>
+				<string>public.content</string>
+			</array>
+			<key>UTTypeDescription</key>
+			<string>Janus Notes Archive</string>
+			<key>UTTypeIconFile</key>
+			<string>it.iltofa.janus.archiveicon</string>
+			<key>UTTypeIdentifier</key>
+			<string>it.iltofa.janusarchive</string>
+			<key>UTTypeReferenceURL</key>
+			<string>http://www.janusnotes.com/</string>
+			<key>UTTypeTagSpecification</key>
+			<dict>
+				<key>public.filename-extension</key>
+				<array>
+					<string>janusarchive</string>
 				</array>
 			</dict>
 		</dict>

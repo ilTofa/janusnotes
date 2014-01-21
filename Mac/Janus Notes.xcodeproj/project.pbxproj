@@ -92,6 +92,7 @@
 		64FB1CBC1812FA1E007B2DC5 /* preview.png in Resources */ = {isa = PBXBuildFile; fileRef = 64FB1CBA1812FA1E007B2DC5 /* preview.png */; };
 		64FB1CBD1812FA1E007B2DC5 /* preview@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 64FB1CBB1812FA1E007B2DC5 /* preview@2x.png */; };
 		64FBA4AE188E87E200F83BD5 /* NSManagedObject+Serialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 64FBA4AD188E87E200F83BD5 /* NSManagedObject+Serialization.m */; };
+		64FBA4B2188E912100F83BD5 /* it.iltofa.janus.archiveicon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 64FBA4B1188E912100F83BD5 /* it.iltofa.janus.archiveicon.icns */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -243,6 +244,7 @@
 		64FB1CBB1812FA1E007B2DC5 /* preview@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "preview@2x.png"; path = "Buttons/preview@2x.png"; sourceTree = "<group>"; };
 		64FBA4AC188E87E200F83BD5 /* NSManagedObject+Serialization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSManagedObject+Serialization.h"; path = "../common/NSManagedObjectSerialization/NSManagedObject+Serialization.h"; sourceTree = "<group>"; };
 		64FBA4AD188E87E200F83BD5 /* NSManagedObject+Serialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSManagedObject+Serialization.m"; path = "../common/NSManagedObjectSerialization/NSManagedObject+Serialization.m"; sourceTree = "<group>"; };
+		64FBA4B1188E912100F83BD5 /* it.iltofa.janus.archiveicon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = it.iltofa.janus.archiveicon.icns; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -447,6 +449,7 @@
 		64EA621616F7110300F4838E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				64FBA4B1188E912100F83BD5 /* it.iltofa.janus.archiveicon.icns */,
 				64B4B7BB181140A700766D43 /* MarkdownPreview.html */,
 				64B56854174658ED006D04C4 /* readme.txt */,
 				6476CFAA1746223900A6195C /* it.iltofa.janus.icns */,
@@ -642,6 +645,7 @@
 				6476CFA81743BABE00A6195C /* IAMWaitingWindowController.xib in Resources */,
 				6476CFAB1746223900A6195C /* it.iltofa.janus.icns in Resources */,
 				64B56855174658ED006D04C4 /* readme.txt in Resources */,
+				64FBA4B2188E912100F83BD5 /* it.iltofa.janus.archiveicon.icns in Resources */,
 				64E6BDA7174FCB1A00B63D46 /* edit.png in Resources */,
 				64E6BDA8174FCB1A00B63D46 /* edit@2x.png in Resources */,
 				64E6BDBB175009C600B63D46 /* add_property.png in Resources */,

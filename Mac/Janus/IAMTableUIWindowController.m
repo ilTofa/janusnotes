@@ -286,10 +286,34 @@
     }
     NSData * data=[NSKeyedArchiver archivedDataWithRootObject:notesToBeSerialized];
     DLog(@"Should save to a file %lu bytes of data", (unsigned long)[data length]);
+    NSSavePanel *savePanel = [NSSavePanel savePanel];
+    [savePanel setAllowedFileTypes:@[@"it.iltofa.janusarchive"]];
+    savePanel.allowsOtherFileTypes = NO;
+    [savePanel beginSheetModalForWindow:self.window completionHandler:^(NSInteger result){
+        if(result == NSFileHandlingPanelCancelButton) {
+            DLog(@"User canceled");
+        } else {
+            DLog(@"User selected URL %@, now saving.", savePanel.URL);
+            if (![data writeToURL:savePanel.URL atomically:YES]) {
+                NSLog(@"Error saving data");
+            }
+        }
+    }];
 }
 
 - (IBAction)restoreNotesArchive:(id)sender {
     DLog(@"called.");
+    NSOpenPanel *openPanel = [NSOpenPanel openPanel];
+    openPanel.allowsMultipleSelection = NO;
+    openPanel.canChooseDirectories = NO;
+    openPanel.canChooseFiles = YES;
+    [openPanel beginSheetModalForWindow:self.window completionHandler:^(NSInteger result){
+        if(result == NSFileHandlingPanelCancelButton) {
+            DLog(@"User canceled");
+        } else {
+            DLog(@"User selected URL %@, now loading.", openPanel.URL);
+        }
+    }];
 }
 
 @end
