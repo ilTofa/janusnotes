@@ -91,6 +91,7 @@
 		64EE7C80180C58B9004B94E2 /* html.c in Sources */ = {isa = PBXBuildFile; fileRef = 64EE7C7B180C58B9004B94E2 /* html.c */; };
 		64FB1CBC1812FA1E007B2DC5 /* preview.png in Resources */ = {isa = PBXBuildFile; fileRef = 64FB1CBA1812FA1E007B2DC5 /* preview.png */; };
 		64FB1CBD1812FA1E007B2DC5 /* preview@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 64FB1CBB1812FA1E007B2DC5 /* preview@2x.png */; };
+		64FBA4AE188E87E200F83BD5 /* NSManagedObject+Serialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 64FBA4AD188E87E200F83BD5 /* NSManagedObject+Serialization.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -240,6 +241,8 @@
 		64EE7C81180C5981004B94E2 /* houdini.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = houdini.h; sourceTree = "<group>"; };
 		64FB1CBA1812FA1E007B2DC5 /* preview.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = preview.png; path = Buttons/preview.png; sourceTree = "<group>"; };
 		64FB1CBB1812FA1E007B2DC5 /* preview@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "preview@2x.png"; path = "Buttons/preview@2x.png"; sourceTree = "<group>"; };
+		64FBA4AC188E87E200F83BD5 /* NSManagedObject+Serialization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSManagedObject+Serialization.h"; path = "../common/NSManagedObjectSerialization/NSManagedObject+Serialization.h"; sourceTree = "<group>"; };
+		64FBA4AD188E87E200F83BD5 /* NSManagedObject+Serialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSManagedObject+Serialization.m"; path = "../common/NSManagedObjectSerialization/NSManagedObject+Serialization.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -505,6 +508,8 @@
 				64EE7C6A180C54EC004B94E2 /* sundown */,
 				643F0089177C7153005B1DB5 /* NSDate+GTStringsHelpers.h */,
 				643F008A177C7153005B1DB5 /* NSDate+GTStringsHelpers.m */,
+				64FBA4AC188E87E200F83BD5 /* NSManagedObject+Serialization.h */,
+				64FBA4AD188E87E200F83BD5 /* NSManagedObject+Serialization.m */,
 				64D8C9B81740F985005D87DC /* STKeychain.h */,
 				64D8C9B91740F985005D87DC /* STKeychain.m */,
 				64D8C99E1740F7B0005D87DC /* RNCryptor */,
@@ -707,6 +712,7 @@
 				64D8C9B21740F7B0005D87DC /* RNEncryptor.m in Sources */,
 				64EE7C75180C54EC004B94E2 /* buffer.c in Sources */,
 				64D8C9BA1740F985005D87DC /* STKeychain.m in Sources */,
+				64FBA4AE188E87E200F83BD5 /* NSManagedObject+Serialization.m in Sources */,
 				6476CFA0174382D500A6195C /* IAMCryptPasswordWC.m in Sources */,
 				6476CFA71743BABE00A6195C /* IAMWaitingWindowController.m in Sources */,
 				643F008B177C7153005B1DB5 /* NSDate+GTStringsHelpers.m in Sources */,

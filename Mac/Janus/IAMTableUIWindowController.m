@@ -31,6 +31,7 @@
 #import "CoreDataController.h"
 #import "IAMFilesystemSyncController.h"
 #import "NSManagedObjectContext+FetchedObjectFromURI.h"
+#import "NSManagedObject+Serialization.h"
 #import "Attachment.h"
 
 @interface IAMTableUIWindowController () <IAMNoteEditorWCDelegate, NSWindowDelegate>
@@ -276,6 +277,15 @@
 
 - (IBAction)backupNotesArchive:(id)sender {
     DLog(@"called.");
+    NSArray *notes = [self.arrayController arrangedObjects];
+    NSMutableArray *notesToBeSerialized = [[NSMutableArray alloc] initWithCapacity:[notes count]];
+    for (Note *note in notes) {
+        DLog(@"2BSaved: '%@'", note.title);
+        NSDictionary *noteDict = [note toDictionary];
+        [notesToBeSerialized addObject:noteDict];
+    }
+    NSData * data=[NSKeyedArchiver archivedDataWithRootObject:notesToBeSerialized];
+    DLog(@"Should save to a file %lu bytes of data", (unsigned long)[data length]);
 }
 
 - (IBAction)restoreNotesArchive:(id)sender {

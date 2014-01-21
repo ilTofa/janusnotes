@@ -107,7 +107,7 @@ CA
                             <menuItem isSeparatorItem="YES" id="790">
                                 <modifierMask key="keyEquivalentModifierMask" command="YES"/>
                             </menuItem>
-                            <menuItem title="Backup Notes Archive..." id="5YA-0e-VHP">
+                            <menuItem title="Backup Shown Notes..." id="5YA-0e-VHP">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <connections>
                                     <action selector="backupNotesArchive:" target="-1" id="GJ8-dq-GZY"/>
