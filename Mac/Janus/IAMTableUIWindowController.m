@@ -280,7 +280,6 @@
     NSArray *notes = [self.arrayController arrangedObjects];
     NSMutableArray *notesToBeSerialized = [[NSMutableArray alloc] initWithCapacity:[notes count]];
     for (Note *note in notes) {
-        DLog(@"2BSaved: '%@'", note.title);
         NSDictionary *noteDict = [note toDictionary];
         [notesToBeSerialized addObject:noteDict];
     }
@@ -304,13 +303,26 @@
             if (![data writeToURL:savePanel.URL options:NSDataWritingAtomic error:&error]) {
                 message = [NSString stringWithFormat:@"Error saving data: %@", [error description]];
             } else {
-                message = [NSString stringWithFormat:@"%lu notes saved in the archive (unencrypted).", savedNotesCount];
+                message = [NSString stringWithFormat:@"%lu notes saved in the archive. Archive is unencrypted, please store it in a secure place.", savedNotesCount];
             }
             [alert setInformativeText:message];
             [alert setMessageText:NSLocalizedString(@"Backup Operation", @"")];
             [alert addButtonWithTitle:@"OK"];
             [alert beginSheetModalForWindow:self.window modalDelegate:nil didEndSelector:nil contextInfo:nil];
         }
+    }];
+}
+
+- (void)saveNoteFromDictionary:(NSDictionary *)potentialNote inManagedObjectContext:(NSManagedObjectContext *)moc {
+    NSError *error;
+    [NSManagedObject createManagedObjectFromDictionary:potentialNote inContext:moc];
+    if(![moc save:&error])
+        ALog(@"Unresolved error %@, %@", error, [error userInfo]);
+    // Save on parent context
+    [[IAMFilesystemSyncController sharedInstance].dataSyncThreadContext performBlock:^{
+        NSError *localError;
+        if(![[IAMFilesystemSyncController sharedInstance].dataSyncThreadContext save:&localError])
+            ALog(@"Unresolved error saving parent context %@, %@", error, [error userInfo]);
     }];
 }
 
@@ -342,22 +354,22 @@
                 [request setPredicate:predicate];
                 NSArray *results = [moc executeFetchRequest:request error:&error];
                 if (results && [results count] > 0) {
-                    skippedNotes++;
+                    NSDate *potentialNoteTimestamp = [NSDate dateWithTimeIntervalSinceReferenceDate:[potentialNote[@"dAtEaTtr:timeStamp"] doubleValue]];
+                    if ([potentialNoteTimestamp compare:((Note *)results[0]).timeStamp] == NSOrderedDescending) {
+                        DLog(@"%@ should be saved %@ > %@.", ((Note *)results[0]).title, potentialNoteTimestamp, ((Note *)results[0]).timeStamp);
+                        [self saveNoteFromDictionary:potentialNote inManagedObjectContext:moc];
+                        savedNotes++;
+                    } else {
+                        skippedNotes++;
+                    }
                 } else {
-                    [NSManagedObject createManagedObjectFromDictionary:potentialNote inContext:moc];
-                    if(![moc save:&error])
-                        ALog(@"Unresolved error %@, %@", error, [error userInfo]);
-                    // Save on parent context
-                    [[IAMFilesystemSyncController sharedInstance].dataSyncThreadContext performBlock:^{
-                        NSError *localError;
-                        if(![[IAMFilesystemSyncController sharedInstance].dataSyncThreadContext save:&localError])
-                            ALog(@"Unresolved error saving parent context %@, %@", error, [error userInfo]);
-                    }];
+                    DLog(@"%@ should be saved because not existing on current db.", ((Note *)results[0]).title);
+                    [self saveNoteFromDictionary:potentialNote inManagedObjectContext:moc];
                     savedNotes++;
                 }
             }
             NSAlert *alert = [[NSAlert alloc] init];
-            NSString *message = [NSString stringWithFormat:@"%lu notes in archive. %lu saved. %lu skipped because already existing.", notesInArchive, savedNotes, skippedNotes];
+            NSString *message = [NSString stringWithFormat:@"%lu notes in archive. %lu notes imported. %lu notes skipped because already existing in an identical or newer version.", notesInArchive, savedNotes, skippedNotes];
             [alert setInformativeText:message];
             [alert setMessageText:NSLocalizedString(@"Restore Operation", @"")];
             [alert addButtonWithTitle:@"OK"];
