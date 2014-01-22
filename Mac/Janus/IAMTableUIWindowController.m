@@ -304,7 +304,7 @@
             if (![data writeToURL:savePanel.URL options:NSDataWritingAtomic error:&error]) {
                 message = [NSString stringWithFormat:@"Error saving data: %@", [error description]];
             } else {
-                message = [NSString stringWithFormat:@"%lu notes saved in the archive.", savedNotesCount];
+                message = [NSString stringWithFormat:@"%lu notes saved in the archive (unencrypted).", savedNotesCount];
             }
             [alert setInformativeText:message];
             [alert setMessageText:NSLocalizedString(@"Backup Operation", @"")];
