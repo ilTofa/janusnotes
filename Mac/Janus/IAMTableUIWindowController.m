@@ -363,7 +363,7 @@
                         skippedNotes++;
                     }
                 } else {
-                    DLog(@"%@ should be saved because not existing on current db.", ((Note *)results[0]).title);
+                    DLog(@"%@ should be saved because not existing on current db.", potentialNote[@"title"]);
                     [self saveNoteFromDictionary:potentialNote inManagedObjectContext:moc];
                     savedNotes++;
                 }
