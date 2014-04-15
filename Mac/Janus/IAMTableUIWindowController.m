@@ -341,7 +341,7 @@
             NSData *data = [NSData dataWithContentsOfURL:openPanel.URL];
             NSArray *notesRead = [NSKeyedUnarchiver unarchiveObjectWithData:data];
             NSUInteger notesInArchive, skippedNotes, savedNotes;
-            notesInArchive = skippedNotes = savedNotes = 0;
+            skippedNotes = savedNotes = 0;
             notesInArchive = [notesRead count];
             DLog(@"Read %lu objects.", (unsigned long)notesInArchive);
             NSManagedObjectContext *moc = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSConfinementConcurrencyType];

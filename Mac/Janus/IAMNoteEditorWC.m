@@ -567,9 +567,7 @@
 
 - (BOOL)collectionView:(NSCollectionView *)collectionView acceptDrop:(id < NSDraggingInfo >)draggingInfo index:(NSInteger)index dropOperation:(NSCollectionViewDropOperation)dropOperation {
     NSPasteboard *pboard;
-    NSDragOperation sourceDragMask;
     
-    sourceDragMask = [draggingInfo draggingSourceOperationMask];
     pboard = [draggingInfo draggingPasteboard];
     DLog(@"Should perform drag on %@", [pboard types]);
     
