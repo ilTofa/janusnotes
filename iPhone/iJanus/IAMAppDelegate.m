@@ -113,6 +113,7 @@
 -(void)getPIN {
     AHAlertView *alertView = [[AHAlertView alloc] initWithTitle:NSLocalizedString(@"Enter Lock Code", nil) message:NSLocalizedString(@"Enter the lock code to access the application.", nil)];
     alertView.alertViewStyle = UIAlertViewStylePlainTextInput;
+    [[alertView textFieldAtIndex:0] setKeyboardType:UIKeyboardTypeNumberPad];
     if (floor(NSFoundationVersionNumber) > NSFoundationVersionNumber_iOS_6_1) {
         [self applyCustomAlertAppearance];
         [alertView setButtonBackgroundImage:[self imageWithColor:[UIColor colorWithWhite:0.882 alpha:1.0]] forState:UIControlStateNormal];
@@ -123,6 +124,7 @@
         NSError *error;
         NSString *pin = [STKeychain getPasswordForUsername:@"lockCode" andServiceName:@"it.iltofa.janus" error:&error];
         if(!pin || ![pin isEqualToString:[weakAlert textFieldAtIndex:0].text]) {
+            [weakAlert dismiss];
             [self getPIN];
         }
     }];
