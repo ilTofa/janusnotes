@@ -298,15 +298,13 @@
     }
 }
 
--(void)showMediaPickerFor:(UIImagePickerControllerSourceType)type
-{
+-(void)showMediaPickerFor:(UIImagePickerControllerSourceType)type {
 	UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
 	imagePicker.delegate = self;
 	imagePicker.sourceType = type;
-    if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone || type == UIImagePickerControllerSourceTypeCamera)
+    if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone || type == UIImagePickerControllerSourceTypeCamera) {
         [self presentViewController:imagePicker animated:YES completion:^{}];
-    else
-    {
+    } else {
          self.popover = [[UIPopoverController alloc] initWithContentViewController:imagePicker];
         [self.popover presentPopoverFromBarButtonItem:self.addImageButton permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
     }
@@ -314,28 +312,28 @@
 
 #pragma mark - UIImagePickerControllerDelegate
 
-- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
-{
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
 	// MediaType can be kUTTypeImage or kUTTypeMovie. If it's a movie then you
     // can get the URL to the actual file itself. This example only looks for images.
-    NSLog(@"info: %@", info);
+    DLog(@"info: %@", info);
     NSString* mediaType = info[UIImagePickerControllerMediaType];
     // Try getting the edited image first. If it doesn't exist then you get the
     // original image.
     //
-    if (CFStringCompare((CFStringRef) mediaType, kUTTypeImage, 0) == kCFCompareEqualTo)
-	{
+    if (CFStringCompare((CFStringRef) mediaType, kUTTypeImage, 0) == kCFCompareEqualTo) {
         UIImage *pickedImage = info[UIImagePickerControllerEditedImage];
-        if (!pickedImage)
+        if (!pickedImage) {
 			pickedImage = info[UIImagePickerControllerOriginalImage];
+        }
         // Fix orientation
         pickedImage = [pickedImage normalizedImage];
         // Now add attachment...
         Attachment *newAttachment = [NSEntityDescription insertNewObjectForEntityForName:@"Attachment" inManagedObjectContext:self.noteEditorMOC];
         newAttachment.uti = (__bridge NSString *)(kUTTypeImage);
         newAttachment.extension = (__bridge_transfer NSString *)UTTypeCopyPreferredTagWithClass(kUTTypeImage, kUTTagClassFilenameExtension);
-        if(!newAttachment.extension)
+        if(!newAttachment.extension) {
             newAttachment.extension = @"jpg";
+        }
         newAttachment.filename = [NSString stringWithFormat:@"%@.%@", [[NSUUID UUID] UUIDString], newAttachment.extension];
         newAttachment.type = @"Image";
         newAttachment.data = UIImageJPEGRepresentation(pickedImage, 0.5);
@@ -345,18 +343,17 @@
         [self save:nil];
         [self refreshAttachments];
     }
-    if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone)
-        [picker dismissViewControllerAnimated:YES completion:^{}];
-    else
-        [self.popover dismissPopoverAnimated:YES];
+    [self imagePickerControllerDidCancel:picker];
 }
 
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker
 {
-    if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone)
+    if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone || !self.popover) {
         [picker dismissViewControllerAnimated:YES completion:^{}];
-    else
+    } else {
         [self.popover dismissPopoverAnimated:YES];
+        self.popover = nil;
+    }
 }
 
 - (IBAction)shareAction:(id)sender
