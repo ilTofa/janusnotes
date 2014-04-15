@@ -46,6 +46,9 @@
 // CoreData helper
 @property (nonatomic, strong, readonly) CoreDataController *coreDataController;
 
+// PIN handling
+- (void)abortGettingPIN;
+
 // Ads
 @property (nonatomic) BOOL skipAds;
 @property (atomic) BOOL processingPurchase;

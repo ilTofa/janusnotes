@@ -34,7 +34,11 @@
 #import "GTTransientMessage.h"
 #import "AHAlertView.h"
 
-@interface IAMAppDelegate()
+@interface IAMAppDelegate() {
+    AHAlertView *pinView;
+}
+
+@property (getter = isGettingPIN) BOOL gettingPIN;
 
 @end
 
@@ -111,24 +115,34 @@
 }
 
 -(void)getPIN {
-    AHAlertView *alertView = [[AHAlertView alloc] initWithTitle:NSLocalizedString(@"Enter Lock Code", nil) message:NSLocalizedString(@"Enter the lock code to access the application.", nil)];
-    alertView.alertViewStyle = UIAlertViewStylePlainTextInput;
-    [[alertView textFieldAtIndex:0] setKeyboardType:UIKeyboardTypeNumberPad];
+    self.gettingPIN = YES;
+    pinView = [[AHAlertView alloc] initWithTitle:NSLocalizedString(@"Enter Lock Code", nil) message:NSLocalizedString(@"Enter the lock code to access the application.", nil)];
+    pinView.alertViewStyle = UIAlertViewStylePlainTextInput;
+    [[pinView textFieldAtIndex:0] setKeyboardType:UIKeyboardTypeNumberPad];
     if (floor(NSFoundationVersionNumber) > NSFoundationVersionNumber_iOS_6_1) {
         [self applyCustomAlertAppearance];
-        [alertView setButtonBackgroundImage:[self imageWithColor:[UIColor colorWithWhite:0.882 alpha:1.0]] forState:UIControlStateNormal];
+        [pinView setButtonBackgroundImage:[self imageWithColor:[UIColor colorWithWhite:0.882 alpha:1.0]] forState:UIControlStateNormal];
     }
-    __weak AHAlertView *weakAlert = alertView;
-    [alertView addButtonWithTitle:NSLocalizedString(@"OK", nil) block:^ {
+    __weak AHAlertView *weakAlert = pinView;
+    __weak IAMAppDelegate *weakSelf = self;
+    [pinView addButtonWithTitle:NSLocalizedString(@"OK", nil) block:^ {
         DLog(@"Button clicked, text is: \'%@\'", [weakAlert textFieldAtIndex:0].text);
         NSError *error;
         NSString *pin = [STKeychain getPasswordForUsername:@"lockCode" andServiceName:@"it.iltofa.janus" error:&error];
         if(!pin || ![pin isEqualToString:[weakAlert textFieldAtIndex:0].text]) {
             [weakAlert dismiss];
-            [self getPIN];
+            [weakSelf getPIN];
+        } else {
+            weakSelf.gettingPIN = NO;
         }
     }];
-    [alertView show];
+    [pinView show];
+}
+
+- (void)abortGettingPIN {
+    if (self.isGettingPIN) {
+        [pinView dismiss];
+    }
 }
 
 - (void)applyCustomAlertAppearance

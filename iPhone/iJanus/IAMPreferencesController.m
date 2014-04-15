@@ -406,6 +406,8 @@ typedef enum {
 }
 
 - (void)changePasswordASAP {
+    // Kill pending PIN request, ASAP.
+    [(IAMAppDelegate *)[[UIApplication sharedApplication] delegate] abortGettingPIN];
     self.passwordAlert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Set Crypt Password", nil)
                                                     message:NSLocalizedString(@"Please insert remote crypt password.", nil)
                                                    delegate:self
