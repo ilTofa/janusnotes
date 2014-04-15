@@ -49,10 +49,7 @@
 
 + (void)initialize {
     // Init iRate
-    [iRate sharedInstance].daysUntilPrompt = 5;
-    [iRate sharedInstance].usesUntilPrompt = 15;
-    [iRate sharedInstance].appStoreID = 651141191;
-    [iRate sharedInstance].appStoreGenreID = 0;
+    [iRate sharedInstance].promptForNewVersionIfUserRated = YES;
     [iRate sharedInstance].onlyPromptIfMainWindowIsAvailable = NO;
 }
 
