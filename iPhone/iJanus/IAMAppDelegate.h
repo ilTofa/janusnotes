@@ -39,7 +39,7 @@
 
 // helpers for corelocation.
 @property (nonatomic, assign) BOOL isLocationDenied;
-@property (nonatomic, assign) int nLocationUseDenies;
+@property (nonatomic, assign) NSInteger nLocationUseDenies;
 @property (nonatomic, strong) CLLocationManager *locationManager;
 @property (nonatomic) NSString *locationString;
 
