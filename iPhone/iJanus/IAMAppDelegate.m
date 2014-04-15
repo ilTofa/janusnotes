@@ -41,9 +41,8 @@
 @implementation IAMAppDelegate
 
 + (void)initialize {
-    [iRate sharedInstance].daysUntilPrompt = 5;
-    [iRate sharedInstance].usesUntilPrompt = 5;
     [iRate sharedInstance].promptAtLaunch = NO;
+    [iRate sharedInstance].appStoreID = 651150600;
 }
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
