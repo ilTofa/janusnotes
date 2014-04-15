@@ -57,8 +57,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "633"
             endingLineNumber = "633"
-            landmarkName = "@implementation IAMDataSyncController"
-            landmarkType = "3">
+            landmarkName = "-syncAllFromDropbox"
+            landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -73,7 +73,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "643"
             endingLineNumber = "643"
-            landmarkName = "-saveDropboxNoteAt:toExistingCoreDataNote:"
+            landmarkName = "-syncAllFromDropbox"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

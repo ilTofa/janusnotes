@@ -168,7 +168,7 @@ typedef enum {
 - (void)productsRequest:(SKProductsRequest *)request didReceiveResponse:(SKProductsResponse *)response
 {
     self.products = response.products;
-    for (NSString * invalidProductIdentifier in response.invalidProductIdentifiers) {
+    for (NSString __unused * invalidProductIdentifier in response.invalidProductIdentifiers) {
         // Handle any invalid product identifiers.
     }
     DLog(@"%@", self.products);
@@ -359,8 +359,8 @@ typedef enum {
 {
     DLog(@"This is sizePressed: called for a value of: %.0f", self.sizeStepper.value);
     self.fontSize = self.sizeStepper.value;
-    self.sizeLabel.text = [NSString stringWithFormat:@"Text Size is %d", self.fontSize];
-    [[GTThemer sharedInstance] applyColorsToLabel:self.sizeLabel withFontSize:self.fontSize];
+    self.sizeLabel.text = [NSString stringWithFormat:@"Text Size is %ld", (long)self.fontSize];
+    [[GTThemer sharedInstance] applyColorsToLabel:self.sizeLabel withFontSize:(int)self.fontSize];
     [[GTThemer sharedInstance] saveStandardColors:self.colorSet];
     
 }
@@ -439,7 +439,7 @@ typedef enum {
                 [[IAMDataSyncController sharedInstance] refreshContentFromRemote];
             });
         } else {
-            NSLog(@"Button %d clicked, text is: \'%@\'", buttonIndex, [alertView textFieldAtIndex:0].text);
+            NSLog(@"Button %ld clicked, text is: \'%@\'", (long)buttonIndex, [alertView textFieldAtIndex:0].text);
             if(buttonIndex == 1 && ![[alertView textFieldAtIndex:0].text isEqualToString:@""]) {
                 self.hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
                 self.hud.labelText = NSLocalizedString(@"Encrypting Notes", nil);
@@ -475,7 +475,7 @@ typedef enum {
     // lock code setup
     if(alertView == self.lockCodeAlert) {
         if(buttonIndex != alertView.cancelButtonIndex) {
-            NSLog(@"Button %d clicked, text is: \'%@\'", buttonIndex, [alertView textFieldAtIndex:0].text);
+            NSLog(@"Button %ld clicked, text is: \'%@\'", (long)buttonIndex, [alertView textFieldAtIndex:0].text);
             NSError *error;
             [STKeychain storeUsername:@"lockCode" andPassword:[alertView textFieldAtIndex:0].text forServiceName:@"it.iltofa.janus" updateExisting:YES error:&error];
             UIAlertView *lastAlert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Lock Code Set", nil)

@@ -123,13 +123,13 @@
 
 -(NSInteger)getStandardFontFaceID
 {
-    int fontFace = [[NSUserDefaults standardUserDefaults] integerForKey:@"fontFace"];
+    NSInteger fontFace = [[NSUserDefaults standardUserDefaults] integerForKey:@"fontFace"];
     return fontFace;
 }
 
 -(NSInteger)getStandardFontSize
 {
-    int fontSize = [[NSUserDefaults standardUserDefaults] integerForKey:@"fontSize"];
+    NSInteger fontSize = [[NSUserDefaults standardUserDefaults] integerForKey:@"fontSize"];
     if(fontSize == 0)
         fontSize = 14;
     return fontSize;

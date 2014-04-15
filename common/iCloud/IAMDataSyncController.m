@@ -201,12 +201,12 @@ NSString * convertFromValidDropboxFilenames(NSString * originalString) {
             // tring to create it.
             magicTextFile = [[DBFilesystem sharedFilesystem] createFile:magicFile error:&error];
             if(!magicTextFile) {
-                ALog(@"Error creating magic file: %d.", [error code]);
+                ALog(@"Error creating magic file: %ld.", (long)[error code]);
                 return;
             }
         }
         if(![magicTextFile writeData:encryptedData error:&error]) {
-            ALog(@"Error writing to magic file: %d.", [error code]);
+            ALog(@"Error writing to magic file: %ld.", (long)[error code]);
             return;
         }
         [magicTextFile close];
@@ -516,7 +516,7 @@ NSString * convertFromValidDropboxFilenames(NSString * originalString) {
     encodedFilename = [encodedFilename stringByAppendingFormat:@".%@", kNotesExtension];
     DBPath *noteTextPath = [[[DBPath root] childPath:uuid] childPath:encodedFilename];
     if(![[DBFilesystem sharedFilesystem] deletePath:noteTextPath error:&error]) {
-        ALog(@"*** Error %d deleting note text after filename change at %@.", [error code], [noteTextPath stringValue]);
+        ALog(@"*** Error %ld deleting note text after filename change at %@.", (long)[error code], [noteTextPath stringValue]);
     } else {
         DLog(@"Note deleted.");
     }
@@ -527,7 +527,7 @@ NSString * convertFromValidDropboxFilenames(NSString * originalString) {
     DBError *error;
     DBPath *notePath = [[DBPath root] childPath:note.uuid];
     if(![[DBFilesystem sharedFilesystem] deletePath:notePath error:&error]) {
-        ALog(@"*** Error %d deleting note at %@.", [error code], [notePath stringValue]);
+        ALog(@"*** Error %ld deleting note at %@.", (long)[error code], [notePath stringValue]);
     }
 }
 
@@ -536,7 +536,7 @@ NSString * convertFromValidDropboxFilenames(NSString * originalString) {
     DBPath *notePath = [[DBPath root] childPath:attachment.note.uuid];
     DBPath *attachmentPath = [[notePath childPath:kAttachmentDirectory] childPath:attachment.filename];
     if(![[DBFilesystem sharedFilesystem] deletePath:attachmentPath error:&error]) {
-        ALog(@"*** Error %d deleting attachment at %@.", [error code], [attachmentPath stringValue]);
+        ALog(@"*** Error %ld deleting attachment at %@.", (long)[error code], [attachmentPath stringValue]);
     }
 }
 
@@ -546,7 +546,7 @@ NSString * convertFromValidDropboxFilenames(NSString * originalString) {
     NSError *error;
     NSArray *filesAtRoot = [[DBFilesystem sharedFilesystem] listFolder:[DBPath root] error:&error];
     if(!filesAtRoot) {
-        ALog(@"Aborting. Error reading note on file: %d (%@)", [error code], [error description]);
+        ALog(@"Aborting. Error reading note on file: %ld (%@)", (long)[error code], [error description]);
         // Returning NO will delete the note on coredata (and then hopefully reload from dropbox)
         return NO;
     }
@@ -606,7 +606,7 @@ NSString * convertFromValidDropboxFilenames(NSString * originalString) {
         // Get notes ids
         NSArray *filesAtRoot = [[DBFilesystem sharedFilesystem] listFolder:[DBPath root] error:&error];
         if(!filesAtRoot) {
-            ALog(@"Aborting. Error reading notes: %d (%@)", [error code], [error description]);
+            ALog(@"Aborting. Error reading notes: %ld (%@)", (long)[error code], [error description]);
             [self.dataSyncThreadContext rollback];
             _isResettingDataFromDropbox = NO;
             return;
@@ -656,7 +656,7 @@ NSString * convertFromValidDropboxFilenames(NSString * originalString) {
     DBError *error;
     NSMutableArray *filesInNoteDir = [[[DBFilesystem sharedFilesystem] listFolder:pathToNoteDir error:&error] mutableCopy];
     if(!filesInNoteDir) {
-        ALog(@"Aborting. Error reading notes: %d (%@)", [error code], [error description]);
+        ALog(@"Aborting. Error reading notes: %ld (%@)", (long)[error code], [error description]);
         return NO;
     }
     for (DBFileInfo *fileInfo in filesInNoteDir) {
@@ -678,7 +678,7 @@ NSString * convertFromValidDropboxFilenames(NSString * originalString) {
             newNote.creationDate = newNote.timeStamp = fileInfo.modifiedTime;
             DBFile *noteOnDropbox = [[DBFilesystem sharedFilesystem] openFile:fileInfo.path error:&error];
             if(!noteOnDropbox) {
-                ALog(@"Aborting note copy to coredata. Error opening note: %d (%@)", [error code], [error description]);
+                ALog(@"Aborting note copy to coredata. Error opening note: %ld (%@)", (long)[error code], [error description]);
                 [self.dataSyncThreadContext rollback];
                 return NO;
             }
@@ -732,7 +732,7 @@ NSString * convertFromValidDropboxFilenames(NSString * originalString) {
         for (DBFileInfo *attachmentInfo in filesInAttachmentDir) {
             DBFile *attachmentOnDropbox = [[DBFilesystem sharedFilesystem] openFile:attachmentInfo.path error:&error];
             if(!attachmentOnDropbox) {
-                ALog(@"Aborting attachment copy to coredata. Error %d opening attachment %@", [error code], attachmentInfo.path.stringValue);
+                ALog(@"Aborting attachment copy to coredata. Error %ld opening attachment %@", (long)[error code], attachmentInfo.path.stringValue);
                 continue;
             }
             if(!attachmentOnDropbox.status.state == DBFileStateIdle || !attachmentOnDropbox.status.cached) {
