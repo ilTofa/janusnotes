@@ -260,7 +260,7 @@
 
 - (IBAction)upgradeToJanusNotes2:(id)sender {;
     NSAlert *alert = [[NSAlert alloc] init];
-    [alert setMessageText:@"Janus Notes 2 is out.\nIt's better, faster, nicer and uses iCloud."];
+    [alert setMessageText:@"Janus Notes 2 is out.\nIt's better, faster, still encrypting and uses iCloud."];
     [alert setInformativeText:@"Pressing the upgrade button will:\n*) Open a save panel to backup your notes\n*) Open the App Store to download the new version.\n\nAfter installing the new version, select File --> Restore Notes Archive in the new app and import the archive you just saved. Done."];
     [alert addButtonWithTitle:@"Let me Upgrade!"];
     [alert addButtonWithTitle:@"Not now"];

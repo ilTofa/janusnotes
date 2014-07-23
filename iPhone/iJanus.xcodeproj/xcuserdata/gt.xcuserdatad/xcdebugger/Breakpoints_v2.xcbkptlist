@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iJanus/IAMPreferencesController.m"
-            timestampString = "401144696.712378"
+            timestampString = "427849627.036965"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "66"
-            endingLineNumber = "66"
+            startingLineNumber = "67"
+            endingLineNumber = "67"
             landmarkName = "dropboxLinked"
             landmarkType = "19">
          </BreakpointContent>

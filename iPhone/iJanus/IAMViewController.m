@@ -115,6 +115,23 @@
         self.hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
         self.hud.labelText = NSLocalizedString(@"Waiting for Dropbox", nil);
         self.hud.detailsLabelText = NSLocalizedString(@"First sync in progress, please wait.", nil);
+    } else {
+        if (![[NSUserDefaults standardUserDefaults] objectForKey:@"askedForUpgrade2"]) {
+            [self upgradeToJanusNotes2:self];
+            [[NSUserDefaults standardUserDefaults] setObject:@"Done" forKey:@"askedForUpgrade2"];
+        }
+    }
+}
+
+- (IBAction)upgradeToJanusNotes2:(id)sender {
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Janus Notes 2 is out" message:@"It's better, faster, still encrypting and uses iCloud." delegate:self cancelButtonTitle:@"Not Now" otherButtonTitles:@"Let Me Try", nil];
+    [alert show];
+}
+
+- (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex {
+    NSLog(@"Button %ld clicked.", (long)buttonIndex);
+    if (buttonIndex == 1) {
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://itunes.apple.com/app/id879143273?mt=8"]];
     }
 }
 

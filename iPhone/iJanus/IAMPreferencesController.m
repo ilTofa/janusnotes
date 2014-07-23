@@ -48,6 +48,7 @@ typedef enum {
 
 typedef enum {
     supportHelp = 0,
+    supportUpgrade,
     supportUnsatisfied,
     supportSatisfied,
     supportCoffee,
@@ -302,6 +303,9 @@ typedef enum {
             DLog(@"Restore Ads Removal");
             [[SKPaymentQueue defaultQueue] restoreCompletedTransactions];
             [self disableAllStoreUIOptions];
+        } else if (indexPath.row == supportUpgrade) {
+            DLog(@"Upgrade to Janus Notes 2.");
+            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://itunes.apple.com/app/id879143273?mt=8"]];
         }
         [tableView deselectRowAtIndexPath:indexPath animated:YES];
     }
