@@ -70,9 +70,9 @@
         [self.collectionController showWindow:self];
     }
     [self deleteCache];
-    if (![[NSUserDefaults standardUserDefaults] objectForKey:@"askedForUpgrade1"]) {
+    if (![[NSUserDefaults standardUserDefaults] objectForKey:@"askedForUpgrade"]) {
         [self upgradeToJanusNotes2:self];
-        [[NSUserDefaults standardUserDefaults] setObject:@"Done" forKey:@"askedForUpgrade1"];
+        [[NSUserDefaults standardUserDefaults] setObject:@"Done" forKey:@"askedForUpgrade"];
     }
 }
 
@@ -261,12 +261,12 @@
 - (IBAction)upgradeToJanusNotes2:(id)sender {;
     NSAlert *alert = [[NSAlert alloc] init];
     [alert setMessageText:@"Janus Notes 2 is out.\nIt's better, faster, still encrypting and uses iCloud."];
-    [alert setInformativeText:@"Pressing the upgrade button will:\n*) Open a save panel to backup your notes\n*) Open the App Store to download the new version.\n\nAfter installing the new version, select File --> Restore Notes Archive in the new app and import the archive you just saved. Done."];
+    [alert setInformativeText:@"If you use Mavericks and iOS7 upgrade is recommended.\nPressing the upgrade button will:\n*) Open a save panel to backup your notes\n*) Open the App Store to download the new version.\n\nAfter installing the new version, select File --> Restore Notes Archive in the new app and import the archive you just saved. Done."];
     [alert addButtonWithTitle:@"Let me Upgrade!"];
     [alert addButtonWithTitle:@"Not now"];
     NSInteger answer = [alert runModal];
     if (answer == NSAlertFirstButtonReturn) {
-        [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"https://itunes.apple.com/us/app/turms/id879393686?l=it&ls=1&mt=12"]];
+        [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"macappstore://itunes.apple.com/app/id879393686"]];
         [[NSApplication sharedApplication] sendAction:@selector(backupNotesArchive:) to:nil from:self];
     }
 }

@@ -116,15 +116,15 @@
         self.hud.labelText = NSLocalizedString(@"Waiting for Dropbox", nil);
         self.hud.detailsLabelText = NSLocalizedString(@"First sync in progress, please wait.", nil);
     } else {
-        if (![[NSUserDefaults standardUserDefaults] objectForKey:@"askedForUpgrade2"]) {
+        if (![[NSUserDefaults standardUserDefaults] objectForKey:@"askedForUpgrade5"]) {
             [self upgradeToJanusNotes2:self];
-            [[NSUserDefaults standardUserDefaults] setObject:@"Done" forKey:@"askedForUpgrade2"];
+            [[NSUserDefaults standardUserDefaults] setObject:@"Done" forKey:@"askedForUpgrade5"];
         }
     }
 }
 
 - (IBAction)upgradeToJanusNotes2:(id)sender {
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Janus Notes 2 is out" message:@"It's better, faster, still encrypting and uses iCloud." delegate:self cancelButtonTitle:@"Not Now" otherButtonTitles:@"Let Me Try", nil];
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Janus Notes 2 is out" message:@"If you're on Maveriks and iOS7: upgrade now!\nIt's better, faster, still encrypting and uses iCloud." delegate:self cancelButtonTitle:@"Not Now" otherButtonTitles:@"Let Me Try", nil];
     [alert show];
 }
 
