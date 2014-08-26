@@ -38,8 +38,6 @@
 		64D8C9B21740F7B0005D87DC /* RNEncryptor.m in Sources */ = {isa = PBXBuildFile; fileRef = 64D8C9A81740F7B0005D87DC /* RNEncryptor.m */; };
 		64D8C9B71740F7F1005D87DC /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64D8C9B61740F7F1005D87DC /* Security.framework */; };
 		64D8C9BA1740F985005D87DC /* STKeychain.m in Sources */ = {isa = PBXBuildFile; fileRef = 64D8C9B91740F985005D87DC /* STKeychain.m */; };
-		64E406751836A261003F2574 /* iRate.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 64E406721836A261003F2574 /* iRate.bundle */; };
-		64E406761836A261003F2574 /* iRate.m in Sources */ = {isa = PBXBuildFile; fileRef = 64E406741836A261003F2574 /* iRate.m */; };
 		64E6BDA7174FCB1A00B63D46 /* edit.png in Resources */ = {isa = PBXBuildFile; fileRef = 64E6BDA5174FCB1A00B63D46 /* edit.png */; };
 		64E6BDA8174FCB1A00B63D46 /* edit@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 64E6BDA6174FCB1A00B63D46 /* edit@2x.png */; };
 		64E6BDBB175009C600B63D46 /* add_property.png in Resources */ = {isa = PBXBuildFile; fileRef = 64E6BDA9175009C500B63D46 /* add_property.png */; };
@@ -166,9 +164,6 @@
 		64D8C9B61740F7F1005D87DC /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		64D8C9B81740F985005D87DC /* STKeychain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = STKeychain.h; path = ../common/Utilitites/STKeychain.h; sourceTree = "<group>"; };
 		64D8C9B91740F985005D87DC /* STKeychain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = STKeychain.m; path = ../common/Utilitites/STKeychain.m; sourceTree = "<group>"; };
-		64E406721836A261003F2574 /* iRate.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = iRate.bundle; sourceTree = "<group>"; };
-		64E406731836A261003F2574 /* iRate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iRate.h; sourceTree = "<group>"; };
-		64E406741836A261003F2574 /* iRate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iRate.m; sourceTree = "<group>"; };
 		64E6BDA5174FCB1A00B63D46 /* edit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = edit.png; path = Buttons/edit.png; sourceTree = "<group>"; };
 		64E6BDA6174FCB1A00B63D46 /* edit@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "edit@2x.png"; path = "Buttons/edit@2x.png"; sourceTree = "<group>"; };
 		64E6BDA9175009C500B63D46 /* add_property.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = add_property.png; path = Buttons/add_property.png; sourceTree = "<group>"; };
@@ -372,17 +367,6 @@
 			path = ../common/RNCryptor;
 			sourceTree = "<group>";
 		};
-		64E406711836A261003F2574 /* iRate */ = {
-			isa = PBXGroup;
-			children = (
-				64E406721836A261003F2574 /* iRate.bundle */,
-				64E406731836A261003F2574 /* iRate.h */,
-				64E406741836A261003F2574 /* iRate.m */,
-			);
-			name = iRate;
-			path = ../common/iRate;
-			sourceTree = "<group>";
-		};
 		64EA620316F7110300F4838E = {
 			isa = PBXGroup;
 			children = (
@@ -507,7 +491,6 @@
 		64EA627816F71E7600F4838E /* Utilities (common) */ = {
 			isa = PBXGroup;
 			children = (
-				64E406711836A261003F2574 /* iRate */,
 				64EE7C6A180C54EC004B94E2 /* sundown */,
 				643F0089177C7153005B1DB5 /* NSDate+GTStringsHelpers.h */,
 				643F008A177C7153005B1DB5 /* NSDate+GTStringsHelpers.m */,
@@ -660,7 +643,6 @@
 				64E6BDC3175009C600B63D46 /* document.png in Resources */,
 				64E6BDC4175009C600B63D46 /* document@2x.png in Resources */,
 				64E6BDC5175009C600B63D46 /* refresh.png in Resources */,
-				64E406751836A261003F2574 /* iRate.bundle in Resources */,
 				64E6BDC6175009C600B63D46 /* refresh@2x.png in Resources */,
 				64E6BDC7175009C600B63D46 /* save.png in Resources */,
 				64E6BDC8175009C600B63D46 /* save@2x.png in Resources */,
@@ -693,7 +675,6 @@
 				64EE7C74180C54EC004B94E2 /* autolink.c in Sources */,
 				64EA622316F7110300F4838E /* IAMAppDelegate.m in Sources */,
 				64EA627416F71E1400F4838E /* Attachment.m in Sources */,
-				64E406761836A261003F2574 /* iRate.m in Sources */,
 				64EA627516F71E1400F4838E /* CoreDataController.m in Sources */,
 				64EA627616F71E1400F4838E /* IAmMine.xcdatamodeld in Sources */,
 				645A7E611817C602003C9D5A /* IAMNoteEditTextView.m in Sources */,
@@ -822,7 +803,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.7.3;
 				OTHER_CODE_SIGN_FLAGS = "--deep";
 				PRODUCT_NAME = "Janus Notes";
-				PROVISIONING_PROFILE = "84C68679-4A0B-483F-B911-DBE928C1DE5F";
+				PROVISIONING_PROFILE = "235730b2-b406-4cfb-b535-ff0e5a1d950c";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Demo;
@@ -890,7 +871,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.7.3;
 				OTHER_CODE_SIGN_FLAGS = "--deep";
 				PRODUCT_NAME = "Janus Notes";
-				PROVISIONING_PROFILE = "84C68679-4A0B-483F-B911-DBE928C1DE5F";
+				PROVISIONING_PROFILE = "235730b2-b406-4cfb-b535-ff0e5a1d950c";
 				WRAPPER_EXTENSION = app;
 			};
 			name = "Debug Demo";
@@ -1017,7 +998,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.7.3;
 				OTHER_CODE_SIGN_FLAGS = "--deep";
 				PRODUCT_NAME = "Janus Notes";
-				PROVISIONING_PROFILE = "84C68679-4A0B-483F-B911-DBE928C1DE5F";
+				PROVISIONING_PROFILE = "235730b2-b406-4cfb-b535-ff0e5a1d950c";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1037,7 +1018,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.7.3;
 				OTHER_CODE_SIGN_FLAGS = "--deep";
 				PRODUCT_NAME = "Janus Notes";
-				PROVISIONING_PROFILE = "2381B1EC-7CE6-4D75-B9D6-2C4A50D2074F";
+				PROVISIONING_PROFILE = "235730b2-b406-4cfb-b535-ff0e5a1d950c";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

@@ -29,7 +29,6 @@
 #include <sys/sysctl.h>
 #import "IAMFilesystemSyncController.h"
 #import "IAMPrefsWindowController.h"
-#import "iRate.h"
 #import "STKeychain.h"
 
 @interface IAMAppDelegate ()
@@ -46,12 +45,6 @@
 
 @synthesize persistentStoreCoordinator = _persistentStoreCoordinator;
 @synthesize managedObjectContext = _managedObjectContext;
-
-+ (void)initialize {
-    // Init iRate
-    [iRate sharedInstance].promptForNewVersionIfUserRated = YES;
-    [iRate sharedInstance].onlyPromptIfMainWindowIsAvailable = NO;
-}
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
