@@ -193,6 +193,32 @@
         return NSTerminateNow;
     }
     
+    if (self.collectionController.noteEditorIsShown) {
+        NSString *question = NSLocalizedString(@"Do you want to save opened notes?", @"Quit with editors open");
+        NSString *info = NSLocalizedString(@"Quitting now will lose any changes you have made to opened notes since the last successful save", @"Quit with editors open question info");
+        NSString *quitButton = NSLocalizedString(@"Quit anyway", @"Quit anyway button title");
+        NSString *cancelButton = NSLocalizedString(@"Cancel", @"Cancel button title");
+        NSString *saveAllButton = NSLocalizedString(@"Save All", @"Save all button title");
+        NSAlert *alert = [[NSAlert alloc] init];
+        [alert setMessageText:question];
+        [alert setInformativeText:info];
+        [alert addButtonWithTitle:saveAllButton];
+        [alert addButtonWithTitle:cancelButton];
+        [alert addButtonWithTitle:quitButton];
+        
+        NSInteger answer = [alert runModal];
+        
+        switch (answer) {
+            case NSAlertFirstButtonReturn:
+                [self.collectionController saveAllOpenNotes];
+                break;
+            case NSAlertSecondButtonReturn:
+                return NSTerminateCancel;
+            default:
+                break;
+        }
+    }
+    
     if (![[self managedObjectContext] commitEditing]) {
         NSLog(@"%@:%@ unable to commit editing to terminate", [self class], NSStringFromSelector(_cmd));
         return NSTerminateCancel;

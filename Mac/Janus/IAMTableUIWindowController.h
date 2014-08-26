@@ -53,4 +53,7 @@
 // called from openFile in apdelegate
 - (void)openNoteAtURI:(NSURL *)uri;
 
+// Last resort save (for use in quitting app)
+- (void)saveAllOpenNotes;
+
 @end

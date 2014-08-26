@@ -151,6 +151,12 @@
     }
 }
 
+- (void)saveAllOpenNotes {
+    for (IAMNoteEditorWC *editor in self.noteWindowControllers) {
+        [editor saveAndContinue:self];
+    }
+}
+
 - (IBAction)addNote:(id)sender {
     DLog(@"This is addNote handler in MainWindowController");
     IAMNoteEditorWC *noteEditor = [[IAMNoteEditorWC alloc] initWithWindowNibName:@"IAMNoteEditorWC"];
