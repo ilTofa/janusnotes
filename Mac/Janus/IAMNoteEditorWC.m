@@ -111,9 +111,8 @@
 {
     DLog(@"This is IAMNoteWindowController's save.");
     // save (if useful) and pop back
-    if([self.editedNote.title isEqualToString:@""] || [self.editedNote.text isEqualToString:@""]) {
-        DLog(@"Save refused because no title ('%@')", self.editedNote.title);
-        return;
+    if([self.editedNote.title isEqualToString:@""]) {
+        self.editedNote.title = @"Untitled Note";
     }
     // Save modified attachments (if any)
     [self saveModifiedAttachments];
