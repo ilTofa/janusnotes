@@ -1,0 +1,3 @@
+[submodule "common/iRate"]
+	path = common/iRate
+	url = https://ilTofa@github.com/nicklockwood/iRate.git

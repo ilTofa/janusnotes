@@ -31,7 +31,6 @@
 #import <MessageUI/MessageUI.h>
 #import <StoreKit/StoreKit.h>
 #import "IAMAppDelegate.h"
-#import "iRate.h"
 #import "IAMDataSyncController.h"
 #import "MBProgressHUD.h"
 #import "STKeychain.h"
