@@ -42,7 +42,7 @@ Replace the "xxx.." with your own key and secret.
 
 ###Credits
 
-Janus Notes uses the follow third-party frameworks and libraries:
+Janus Notes uses the followng third-party frameworks and libraries:
 
 [iRate](https://github.com/nicklockwood/iRate) Copyright 2011 Charcoal Design
 
