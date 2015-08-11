@@ -1,25 +1,48 @@
 ###Janus Notes
 
-Janus Notes is a syncing note taking program for iOS and OSX that **seriously** respect your right to privacy.
+Janus Notes is a sync-capable notetaking app for iOS and OSX that
+**seriously** respects your right to privacy.
 
-It syncs encrypted notes through Dropbox services. It is named after the Latin God Janus, depicted as having two faces since he looks to the future and to the past. Or, may be, cloud storage and privacy. Or Macintoshes and iPhone/iPad. Or sharing and control. 
+ Janus Notes stores your data using strong encryption and synchronizes it
+across different devices via Dropbox.  The name Janus is a reference to the ancient [Roman God Janus](https://en.wikipedia.org/wiki/Janus), depicted as having two faces since he looks to both future and past. Or perhaps, to cloud
+storage and privacy. Or Macs and iPhone/iPad devices. Or sharing and control.
 
-The built program is available for free from the [Mac App Store](http://itunes.apple.com/app/id651141191) and the iOS [App Store](http://itunes.apple.com/app/id651150600). End user description, [FAQ](http://www.janusnotes.com/faq.html) and [Screenshots](http://www.janusnotes.com/screenshots.html) are available at [janusnotes.com](http://www.janusnotes.com).
+The app is available for free in the
+[Mac App Store](http://itunes.apple.com/app/id651141191) and the iOS
+[App Store](http://itunes.apple.com/app/id651150600). Usage notes,
+[FAQ](http://www.janusnotes.com/faq.html) and
+[screenshots](http://www.janusnotes.com/screenshots.html) are available at
+[janusnotes.com](http://www.janusnotes.com).
 
 ###The code
 
-There are two Xcode 5 projects, one for iOS and the other for OS X, respectively on the IPhone and Mac subdirectory. Forks and contributions are always welcome. 
+There are two Xcode 5 projects, one for iOS and the other for OS X,
+respectively in the IPhone and Mac subdirectories. Forks and pull requests are
+always welcome.
 
-The applications use CoreData for the local "caching" of notes and attachments and (optionally) syncs with Dropbox (using Dropbox Sync on iOS and the filesystem on OS X). The Dropbox files can be encrypted with an user-defined passphrase, the program uses RNCryptor for the actual encryption.
+Both apps leverage the CoreData framework to locally store all notes and
+attachments.  Optionally they may also sync via Dropbox, using the Dropbox Sync API on iOS and the filesystem on OS X. The Dropbox files may be encrypted with an user-defined passphrase. Encryption is performed by the
+[RNCryptor](https://github.com/rnapier/RNCryptor) third-party library
+developed by Rob Napier.
 
-The code at the corresponding tags will generate the programs currently online on the stores, the only required thing not in the repository is the DropboxKeys.h header, containing the app key and the secret you'll need to access the Dropbox Sync API. 
+Release versions matching the binaries distributed in the Apple app stores may
+be built after checking out the correspondingly tagged commits in the
+repository.
 
-The header file contains only 2 useful rows
+The only required file not already in the repository is the **DropboxKeys.h**
+header, containing the app key and the secret that you'll need to access the
+Dropbox Sync API.  This is only required for the iOS version.
+
+Create your DropboxKeys.h so that it contains two macro defs as follows:
 
 	#define DROPBOX_APP_KEY @"xxxxxxxxxxxxxxx"
 	#define DROPBOX_SECRET  @"xxxxxxxxxxxxxxx"
 
-The program uses:
+Replace the "xxx.." with your own key and secret.
+
+###Credits
+
+Janus Notes uses the follow third-party frameworks and libraries:
 
 [iRate](https://github.com/nicklockwood/iRate) Copyright 2011 Charcoal Design
 
