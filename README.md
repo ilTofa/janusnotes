@@ -1,6 +1,8 @@
-###Janus Notes
+Please note that **this software is deprecated and unsupported** (it's here for historical reasons). 
 
-This software is deprecated. It uses deprecated API from Dropbox and has been superseded by [Janus Notes 2](https://github.com/ilTofa/janusnotes), also open source. Janus Notes 2 uses iCloud for data syncing and it still uses the same encryption mechanism as Janus Notes.
+It uses deprecated API from Dropbox and has been superseded by [Janus Notes 2](https://github.com/ilTofa/janusnotes), also open source. Janus Notes 2 uses iCloud for data syncing and it still uses the same encryption mechanism as Janus Notes.
+
+###Janus Notes
 
 Janus Notes is a sync-capable notetaking app for iOS and OSX that
 **seriously** respects your right to privacy.
